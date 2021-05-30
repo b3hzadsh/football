@@ -13,10 +13,12 @@ class MyHome extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: pwidth * 25,
+              height: pwidth * 35,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, "/screens/rank");
+              },
               child: Container(
                 child: Center(
                   child: Text(
@@ -26,7 +28,7 @@ class MyHome extends StatelessWidget {
                     ),
                   ),
                 ),
-                height: pwidth * 7,
+                // height: pwidth * 7,
                 width: pwidth * 70,
               ),
             ),

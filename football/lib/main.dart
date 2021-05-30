@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screen/home.dart';
+import 'screen/rank_screen.dart';
 
 main(List<String> args) {
   runApp(
@@ -16,8 +17,20 @@ class AppWindget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHome(),
+      //home: MyHome(),
       title: "پیش بینی فوتبال",
+      onGenerateRoute: (RouteSettings setting) {
+        if (setting.name == "/") // for home
+          return MaterialPageRoute(
+            builder: (context) => MyHome(),
+            // bring home screen at startup
+          );
+        if (setting.name == "/screens/rank") // for home
+          return MaterialPageRoute(
+            builder: (context) => RankScreen(),
+            // bring home screen at startup
+          );
+      },
     );
   }
 }
